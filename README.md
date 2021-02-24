@@ -22,7 +22,7 @@ HOW TO ACCESS THE CODE:
 5. If TestNG plugin is not installed in your eclipse then first installed it.
 6. To install TestNG, Go to help-> Eclipse Marketplace-> Install TestNG
 7. Now add Referenced Libraries in your project
-8. For istalling referenced libraries, Right click on your project name-> Build path-> configure build path-> add external libraries-> add library selenium-server-standalone-3.141.59.jar file
+8. For installing referenced libraries, Right click on your project name-> Build path-> configure build path-> add external libraries-> add library selenium-server-standalone-3.141.59.jar file
 9. Make a .xml file
 10.Copy and paste the code having filename testng.xml
 
