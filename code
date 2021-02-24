@@ -1,0 +1,110 @@
+package package_1;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class Qualifier {
+	
+	WebDriver driver=null;
+	
+	@Test
+	public void executeLGSession() throws InterruptedException
+	{
+		System.setProperty("webdriver.chrome.driver", "/home/delhivery/Downloads/chromedriver_linux64/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.amazon.in/");
+		Thread.sleep(100);
+		driver.manage().window().maximize();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("lg washing machine");
+		driver.findElement(By.xpath("//input[@id='nav-search-submit-button']")).click();
+		List<WebElement> myelements = driver.findElements(By.xpath("//span[@class='a-price-whole']"));
+		List<WebElement> product_names = driver.findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
+	
+		ArrayList<String> obtainedlist = new ArrayList<>();
+		for(WebElement we:myelements)
+		{
+			obtainedlist.add(we.getText());
+		}
+		ArrayList<String> sortedlist = new ArrayList<>();
+		for(String s:obtainedlist)
+		{
+			sortedlist.add(s);
+		}
+		Collections.sort(sortedlist);
+		Collections.reverse(sortedlist);
+		System.out.println("Price");
+		for(int i=0;i<sortedlist.size();i++)
+		{
+			System.out.println(sortedlist.get(i));
+		}
+        //for(WebElement e : myelements)
+        //{
+        //	System.out.println(e.getText());
+        //}
+        System.out.println();
+        System.out.println();
+        System.out.println("Product names");
+        for(WebElement p:product_names)
+        {
+        	
+        	System.out.println(p.getText());
+        }
+        //driver.close();
+	}
+	
+	@Test
+	public void executesamsungsession() throws InterruptedException
+	{
+		System.setProperty("webdriver.chrome.driver", "/home/delhivery/Downloads/chromedriver_linux64/chromedriver");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.amazon.in/");
+		Thread.sleep(100);
+		driver.manage().window().maximize();
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("samsung washing machine");
+		driver.findElement(By.xpath("//input[@id='nav-search-submit-button']")).click();
+		List<WebElement> myelements = driver.findElements(By.xpath("//span[@class='a-price-whole']"));
+		List<WebElement> product_names = driver.findElements(By.xpath("//span[@class='a-size-medium a-color-base a-text-normal']"));
+		
+		ArrayList<String> obtainedlist = new ArrayList<>();
+		for(WebElement we:myelements)
+		{
+			obtainedlist.add(we.getText());
+		}
+		ArrayList<String> sortedlist = new ArrayList<>();
+		for(String s:obtainedlist)
+		{
+			sortedlist.add(s);
+		}
+		Collections.sort(sortedlist);
+		Collections.reverse(sortedlist);
+		System.out.println("Price");
+		for(int i=0;i<sortedlist.size();i++)
+		{
+			System.out.println(sortedlist.get(i));
+		}
+		//System.out.println("Price");
+        //for(WebElement e : myelements)
+        //{
+        //	System.out.println(e.getText());
+        //}
+        System.out.println();
+        System.out.println();
+        System.out.println("Product names");
+        for(WebElement p:product_names)
+        {
+        	
+        	System.out.println(p.getText());
+        }
+        //driver.close();
+	}
+
+}
