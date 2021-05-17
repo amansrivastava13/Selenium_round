@@ -1,4 +1,4 @@
-# Selenium_round
+# Web Scraping using Selenium with Java
 
 Problem Statement:
 We have to run two tests simultaneously using selenium.
