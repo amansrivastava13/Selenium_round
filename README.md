@@ -28,3 +28,7 @@ HOW TO ACCESS THE CODE:
 
 To run this project
 Go to testng.xml file-> Right click on it-> Run as-> TestNg Suite
+
+
+Tech Stack used:
+Java, Selenium
